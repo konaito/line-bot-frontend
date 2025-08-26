@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Route } from 'next'
 
 interface NavigationItem {
   label: string
@@ -29,7 +30,7 @@ export function Navigation({ title = "Navigation", items }: NavigationProps) {
                 </button>
               ) : (
                 <Link 
-                  href={item.href as any}
+                  href={item.href as Route}
                   className={`block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${item.className || ''}`}
                 >
                   {item.label}

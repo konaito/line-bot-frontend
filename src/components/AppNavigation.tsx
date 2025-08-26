@@ -15,11 +15,11 @@ export function AppNavigation({ chatModel }: AppNavigationProps) {
   const createNewChat = () => {
     if (chatModel) {
       const newChat = chatModel.createChat()
-      router.push(`/chats/${newChat.id}` as any)
+      router.push(`/chat/${newChat.id}`)
     } else {
       // ChatModelが利用できない場合はタイムスタンプベース
       const newChatId = Date.now().toString()
-      router.push(`/chats/${newChatId}` as any)
+      router.push(`/chat/${newChatId}`)
     }
   }
 
